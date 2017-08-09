@@ -4,7 +4,7 @@
 angular.module('users.admin').run(['Menus',
   function (Menus) {
     Menus.addSubMenuItem('topbar', 'admin', {
-      title: 'Manage Users',
+      title: 'アカウント管理',
       state: 'admin.users'
     });
   }

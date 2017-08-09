@@ -5,28 +5,29 @@
     .module('surveys')
     .run(menuConfig);
 
-  menuConfig.$inject = ['menuService'];
+  menuConfig.$inject = ['Menus'];
 
   function menuConfig(menuService) {
     // Set top bar menu items
     menuService.addMenuItem('topbar', {
-      title: 'Surveys',
+      title: 'アンケート管理',
       state: 'surveys',
       type: 'dropdown',
-      roles: ['*']
+      roles: ['admin', 'user']
     });
 
     // Add the dropdown list item
     menuService.addSubMenuItem('topbar', 'surveys', {
-      title: 'List Surveys',
-      state: 'surveys.list'
+      title: 'アンケート一覧',
+      state: 'surveys.list',
+      roles: ['admin', 'user']
     });
 
     // Add the dropdown create item
     menuService.addSubMenuItem('topbar', 'surveys', {
-      title: 'Create Survey',
+      title: 'アンケート作成',
       state: 'surveys.create',
-      roles: ['user']
+      roles: ['admin', 'user']
     });
   }
 }());
