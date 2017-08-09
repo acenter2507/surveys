@@ -12,7 +12,10 @@
       .state('surveys', {
         abstract: true,
         url: '/surveys',
-        template: '<ui-view/>'
+        template: '<ui-view/>',
+        data: {
+          roles: ['user', 'admin']
+        }
       })
       .state('surveys.list', {
         url: '',
@@ -45,7 +48,6 @@
           surveyResolve: getSurvey
         },
         data: {
-          roles: ['user', 'admin'],
           pageTitle: 'Edit Survey {{ surveyResolve.name }}'
         }
       })
