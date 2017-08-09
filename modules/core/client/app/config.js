@@ -15,7 +15,7 @@ var ApplicationConfiguration = (function () {
     'ncy-angular-breadcrumb',
     'angular-loading-bar',
     'angularMoment'
-    ];
+  ];
 
   // Add a new vertical module
   var registerModule = function (moduleName, dependencies) {
