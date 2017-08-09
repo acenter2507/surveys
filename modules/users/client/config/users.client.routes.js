@@ -29,6 +29,7 @@ angular.module('users').config(['$stateProvider',
         url: '/picture',
         templateUrl: 'modules/users/client/views/settings/change-profile-picture.client.view.html'
       })
+      // パスワード認証
       .state('authentication', {
         abstract: true,
         url: '/authentication',
@@ -42,6 +43,7 @@ angular.module('users').config(['$stateProvider',
         url: '/signin?err',
         templateUrl: 'modules/users/client/views/authentication/signin.client.view.html'
       })
+      // パスワードを忘れるとき
       .state('password', {
         abstract: true,
         url: '/password',
