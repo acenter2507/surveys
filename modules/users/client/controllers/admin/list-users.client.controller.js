@@ -56,6 +56,7 @@ function UserListController($scope, $state, Authentication, $filter, Admin, dial
     function handle_delete() {
       user.$remove();
       $scope.users = _.without($scope.users, user);
+      $scope.figureOutItemsToDisplay();
     }
   };
 }
