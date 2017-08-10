@@ -39,12 +39,13 @@
           <!-- 役割 -->
           <div class="form-group col-md-6" show-errors>
             <label class="control-label" for="roles">役割</label>
-            <div class="controls">
-              <input class="form-control" type="text" name="roles" ng-model="user.roles" id="roles" placeholder="user,admin" ng-list required
-              />
-              <div ng-messages="userForm.roles.$error" role="alert">
-                <p class="help-block error-text" ng-message="required">1つ以上の役割が必要です。</p>
-              </div>
+            <select id="roles" name="roles" class="form-control" ng-model="user.roles" ng-list required>
+              <option value></option>
+              <option value="user,admin">管理者</option>
+              <option value="user">一般ユーザー</option>
+            </select>
+            <div ng-messages="userForm.roles.$error" role="alert">
+              <p class="help-block error-text" ng-message="required">1つ以上の役割が必要です。</p>
             </div>
           </div>
           <!-- ユーザー名 -->
