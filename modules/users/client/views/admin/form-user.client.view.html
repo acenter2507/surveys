@@ -10,7 +10,7 @@
         <fieldset>
           <!-- 姓 -->
           <div class="form-group col-md-6" show-errors>
-            <label for="firstName">姓</label>
+            <label class="control-label" for="firstName">姓</label>
             <input type="text" id="firstName" name="firstName" class="form-control" ng-model="user.firstName" placeholder="姓" required
             />
             <div ng-messages="userForm.firstName.$error" role="alert">
@@ -19,7 +19,7 @@
           </div>
           <!-- 名 -->
           <div class="form-group col-md-6" show-errors>
-            <label for="lastName">名</label>
+            <label class="control-label" for="lastName">名</label>
             <input type="text" id="lastName" name="lastName" class="form-control" ng-model="user.lastName" placeholder="Last Name" required
             />
             <div ng-messages="userForm.lastName.$error" role="alert">
@@ -49,7 +49,7 @@
           </div>
           <!-- ユーザー名 -->
           <div class="form-group col-md-6" show-errors>
-            <label for="username">ユーザー名</label>
+            <label class="control-label" for="username">ユーザー名</label>
             <input type="text" id="username" name="username" class="form-control" ng-model="user.username" placeholder="ユーザー名" required
             />
             <div ng-messages="userForm.username.$error" role="alert">
@@ -58,7 +58,7 @@
           </div>
           <!-- パスワード -->
           <div class="form-group col-md-6" show-errors ng-if="!user._id">
-            <label for="password">パスワード</label>
+            <label class="control-label" for="password">パスワード</label>
             <input type="password" id="password" name="password" class="form-control" ng-model="user.password" placeholder="パスワード"
                   popover="{{popoverMsg}}" popover-trigger="focus" password-validator required>
             <div ng-messages="userForm.password.$error" role="alert">
