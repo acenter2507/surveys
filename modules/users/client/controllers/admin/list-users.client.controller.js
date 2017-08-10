@@ -32,5 +32,23 @@ angular.module('users.admin').controller('UserListController', ['$scope', '$filt
     $scope.pageChanged = function () {
       $scope.figureOutItemsToDisplay();
     };
+
+    $scope.remove = function (user) {
+      $scope.message_title = 'アカウント削除!';
+      $scope.message_content = user.displayName + 'さんのアカウントを削除しますか？';
+      $scope.dialog_type = 3;
+      $scope.buton_label = '削除';
+      dialog.openConfirm({
+        scope: $scope,
+        templateUrl: 'modules/core/client/views/templates/confirm-dialog.client.template.html'
+      }).then(confirm => {
+        handle_delete();
+      }, reject => {
+      });
+      function handle_delete() {
+        user.$remove();
+        $scope.users = _.without($scope.users, user);
+      }
+    };
   }
 ]);

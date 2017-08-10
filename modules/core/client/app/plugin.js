@@ -6,9 +6,9 @@
     .config(pluginConfig)
     .run(runConfig);
 
-  pluginConfig.$inject = ['cfpLoadingBarProvider', '$breadcrumbProvider'];
+  pluginConfig.$inject = ['cfpLoadingBarProvider', '$breadcrumbProvider', 'toastrConfig'];
 
-  function pluginConfig(cfpLoadingBarProvider, $breadcrumbProvider, NotificationProvider) {
+  function pluginConfig(cfpLoadingBarProvider, $breadcrumbProvider, toastrConfig) {
     // Loading bar
     cfpLoadingBarProvider.includeSpinner = false;
     cfpLoadingBarProvider.latencyThreshold = 1;
@@ -18,6 +18,20 @@
       prefixStateName: 'home',
       includeAbstract: true,
       template: '<li class="breadcrumb-item" ng-repeat="step in steps" ng-class="{active: $last}" ng-switch="$last || !!step.abstract"><a class="undecorated-link" ng-switch-when="false" href="{{step.ncyBreadcrumbLink}}">{{step.ncyBreadcrumbLabel}}</a><span ng-switch-when="true">{{step.ncyBreadcrumbLabel}}</span></li>'
+    });
+
+    // Toast
+    angular.extend(toastrConfig, {
+      allowHtml: false,
+      autoDismiss: true,
+      closeButton: true,
+      // containerId: 'toast-container',
+      maxOpened: 5,
+      newestOnTop: false,
+      positionClass: 'toast-bottom-right',
+      preventDuplicates: false,
+      preventOpenDuplicates: false,
+      target: 'body'
     });
   }
 
