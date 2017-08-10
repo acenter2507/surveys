@@ -5,44 +5,44 @@ angular.module('users.admin').controller('UserController', ['$scope', '$state', 
     $scope.authentication = Authentication;
     $scope.user = userResolve;
 
-    $scope.remove = function (user) {
-      if (confirm('Are you sure you want to delete this user?')) {
-        if (user) {
-          user.$remove();
+    // $scope.remove = function (user) {
+    //   if (confirm('Are you sure you want to delete this user?')) {
+    //     if (user) {
+    //       user.$remove();
 
-          $scope.users.splice($scope.users.indexOf(user), 1);
-        } else {
-          $scope.user.$remove(function () {
-            $state.go('admin.users');
-          });
-        }
-      }
-    };
+    //       $scope.users.splice($scope.users.indexOf(user), 1);
+    //     } else {
+    //       $scope.user.$remove(function () {
+    //         $state.go('admin.users');
+    //       });
+    //     }
+    //   }
+    // };
 
-    $scope.save = function (isValid) {
-      if (!isValid) {
-        $scope.$broadcast('show-errors-check-validity', 'userForm');
-        return false;
-      }
+    // $scope.save = function (isValid) {
+    //   if (!isValid) {
+    //     $scope.$broadcast('show-errors-check-validity', 'userForm');
+    //     return false;
+    //   }
 
-      var user = $scope.user;
-      if (user._id) {
-        user.$update(res => {
-          $state.go('admin.user', {
-            userId: res._id
-          });
-        }, err => {
-          $scope.error = err.data.message;
-        });
-      } else {
-        user.$save(res => {
-          $state.go('admin.user', {
-            userId: res._id
-          });
-        }, err => {
-          $scope.error = err.data.message;
-        });
-      }
-    };
+    //   var user = $scope.user;
+    //   if (user._id) {
+    //     user.$update(res => {
+    //       $state.go('admin.user', {
+    //         userId: res._id
+    //       });
+    //     }, err => {
+    //       $scope.error = err.data.message;
+    //     });
+    //   } else {
+    //     user.$save(res => {
+    //       $state.go('admin.user', {
+    //         userId: res._id
+    //       });
+    //     }, err => {
+    //       $scope.error = err.data.message;
+    //     });
+    //   }
+    // };
   }
 ]);

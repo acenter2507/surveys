@@ -57,3 +57,8 @@ angular.module('users.admin.routes').config(['$stateProvider',
       });
   }
 ]);
+newUser.$inject = ['Admin'];
+
+function newUser(Admin) {
+  return new newUser();
+}
