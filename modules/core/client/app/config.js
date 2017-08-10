@@ -14,6 +14,7 @@ var ApplicationConfiguration = (function () {
     'angularFileUpload',
     'ncy-angular-breadcrumb',
     'angular-loading-bar',
+    'ngMaterial',
     'angularMoment'
   ];
 
