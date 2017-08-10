@@ -37,9 +37,9 @@
               <div class="loader"></div>
             </td>
           </tr>
-          <!--<tr ng-show="pagedItems.length === 0 && !busy">
-            <td class="text-center" colspan="11">Has no data found.</td>
-          </tr>-->
+          <tr ng-show="pagedItems.length === 0 && !busy">
+            <td class="text-center" colspan="6">データが見つかりません。</td>
+          </tr>
           <tr ng-repeat="user in pagedItems">
             <td class="text-center">
               <img src="{{ user.profileImageURL }}" alt="{{ user.displayName }}" class="header-profile-image">
@@ -59,8 +59,10 @@
           </tr>
         </tbody>
       </table>
-      <pagination boundary-links="true" max-size="8" items-per-page="itemsPerPage" total-items="filterLength" ng-model="currentPage"
-        ng-change="pageChanged()"></pagination>
+      <div class="row text-center">
+        <pagination boundary-links="true" max-size="8" items-per-page="itemsPerPage" total-items="filterLength" ng-model="currentPage"
+          ng-change="pageChanged()"></pagination>
+      </div>
     </div>
   </div>
 
