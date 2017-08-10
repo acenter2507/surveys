@@ -6,7 +6,6 @@ module.exports = {
       css: [
         'public/lib/bootstrap/dist/css/bootstrap.css',
         'public/lib/font-awesome/css/font-awesome.css',
-        'public/lib/angular-material/angular-material.css',
         'public/lib/angular-loading-bar/build/loading-bar.css'
       ],
       js: [
@@ -19,8 +18,6 @@ module.exports = {
         'public/lib/angular-ui-utils/ui-utils.js',
         'public/lib/angular-bootstrap/ui-bootstrap-tpls.js',
         'public/lib/angular-file-upload/angular-file-upload.js',
-        'public/lib/angular-aria/angular-aria.js',
-        'public/lib/angular-material/angular-material.js',
         'public/lib/owasp-password-strength-test/owasp-password-strength-test.js',
         'public/lib/underscore/underscore.js',
         'public/lib/moment/moment.js',
