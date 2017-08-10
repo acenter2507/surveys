@@ -34,7 +34,7 @@ function cardExpandDirective() {
       if (element.hasClass('card-expand-toggle')) {
         element.find('i').toggleClass('r180');
         // angular.element('body').toggleClass('sidebar-mobile-show');
-        element.parent().parent().find('.card-expand').toggleClass('open');
+        element.parent().find('.card-expand').toggleClass('open');
       }
       // 
     });
