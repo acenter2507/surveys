@@ -137,7 +137,8 @@ h6, .h6 {
 .card.card-expand .card-footer {
   transition-duration: 0.5s;
   transition: height 0.5s ease-in;
-  height: 0; }
+  height: 0;
+  padding: 0; }
 .card.card-expand.open .card-body {
   height: unset; }
 .card.card-expand.open .card-footer {
