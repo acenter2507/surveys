@@ -10,7 +10,7 @@ function UserController($scope, $state, Authentication, userResolve, dialog, toa
 
   $scope.remove = function () {
     $scope.message_title = 'アカウント削除!';
-    $scope.message_content = user.displayName + 'さんのアカウントを削除しますか？';
+    $scope.message_content = $scope.user.displayName + 'さんのアカウントを削除しますか？';
     $scope.dialog_type = 3;
     $scope.buton_label = '削除';
     dialog.openConfirm({
