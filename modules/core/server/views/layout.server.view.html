@@ -39,11 +39,9 @@
   <div class="wraper">
     <header ng-include="'/modules/core/client/views/header.client.view.html'" class="navbar navbar-fixed-top navbar-inverse"></header>
     <section class="content">
-      <section class="container">
-        <ol class="breadcrumb" breadcrumb>
-          <ncy-breadcrumb></ncy-breadcrumb>
-        </ol>
-      </section>
+      <ol class="breadcrumb" breadcrumb>
+        <ncy-breadcrumb></ncy-breadcrumb>
+      </ol>
       <section class="container-fluid">
         {% block content %}{% endblock %}
       </section>
