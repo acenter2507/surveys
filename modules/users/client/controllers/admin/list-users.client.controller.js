@@ -4,6 +4,7 @@ angular.module('users.admin').controller('UserListController', ['$scope', '$filt
   function ($scope, $filter, Admin) {
 
     $scope.busy = true;
+    $scope.filter = {};
 
     Admin.query(function (data) {
       $scope.users = data;
@@ -19,7 +20,7 @@ angular.module('users.admin').controller('UserListController', ['$scope', '$filt
 
     $scope.figureOutItemsToDisplay = function () {
       $scope.filteredItems = $filter('filter')($scope.users, {
-        $: $scope.search
+        $: $scope.filter.search
       });
       $scope.filterLength = $scope.filteredItems.length;
       var begin = (($scope.currentPage - 1) * $scope.itemsPerPage);
