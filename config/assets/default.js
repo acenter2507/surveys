@@ -6,6 +6,9 @@ module.exports = {
       css: [
         'public/lib/bootstrap/dist/css/bootstrap.css',
         'public/lib/font-awesome/css/font-awesome.css',
+        'public/lib/ng-dialog/css/ngDialog.min.css',
+        'public/lib/ng-dialog/css/ngDialog-theme-default.min.css',
+        'public/lib/angular-toastr/dist/angular-toastr.css',
         'public/lib/angular-loading-bar/build/loading-bar.css'
       ],
       js: [
@@ -25,7 +28,9 @@ module.exports = {
         'public/lib/moment/locale/ja.js',
         'public/lib/angular-moment/angular-moment.js',
         'public/lib/angular-breadcrumb/dist/angular-breadcrumb.js',
-        'public/lib/angular-loading-bar/build/loading-bar.js'
+        'public/lib/angular-loading-bar/build/loading-bar.js',
+        'public/lib/ng-dialog/js/ngDialog.min.js',
+        'public/lib/angular-toastr/dist/angular-toastr.tpls.js'
       ],
       tests: ['public/lib/angular-mocks/angular-mocks.js']
     },

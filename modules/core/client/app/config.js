@@ -14,7 +14,9 @@ var ApplicationConfiguration = (function () {
     'angularFileUpload',
     'ncy-angular-breadcrumb',
     'angular-loading-bar',
-    'angularMoment'
+    'angularMoment',
+    'ngDialog',
+    'toastr'
   ];
 
   // Add a new vertical module
