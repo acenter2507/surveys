@@ -59,8 +59,8 @@
           <!-- パスワード -->
           <div class="form-group col-md-6" show-errors ng-if="!user._id">
             <label class="control-label" for="password">パスワード</label>
-            <input type="password" id="password" name="password" class="form-control" ng-model="user.password" placeholder="パスワード"
-                  popover="{{popoverMsg}}" popover-trigger="focus" password-validator required>
+            <input type="password" id="password" name="password" class="form-control" ng-model="user.password" placeholder="パスワード" popover="{{popoverMsg}}"
+              popover-trigger="focus" password-validator required>
             <div ng-messages="userForm.password.$error" role="alert">
               <p class="help-block error-text" ng-message="required">パスワードは必須項目です。</p>
               <div ng-repeat="passwordError in passwordErrors">
@@ -77,15 +77,17 @@
           </div>
         </fieldset>
       </form>
-      <pre>
-        セキュリティのためパスワードはいくつのルールを守って頂きます。
-        １．最短１０文字と最大１２８文字。
-        ２．３つ以上の繰り返し文字が含まない。
-        ３．最低１つの小文字
-        ４．最低１つの大文字
-        ５．最低１つの番号
-        ６．最低１つの特徴文字「!".#$%&'()@」
-      </pre>
+      <div class="well">
+        <p>
+          セキュリティのためパスワードはいくつのルールを守って頂きます。
+          <br>１．最短１０文字と最大１２８文字。
+          <br>２．３つ以上の繰り返し文字が含まない。
+          <br>３．最低１つの小文字
+          <br>４．最低１つの大文字
+          <br>５．最低１つの番号
+          <br>６．最低１つの特徴文字「!".#$%&'()@
+        </p>
+      </div>
     </div>
   </div>
   <!--<div class="page-header">
