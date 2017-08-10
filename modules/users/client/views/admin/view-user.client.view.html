@@ -6,38 +6,38 @@
       <button ng-if="user._id && owner._id !== user._id" class="btn btn-sm btn-danger pull-right mg5r" ng-click="remove()">削除</button>
     </div>
     <div class="card-body">
-        <div class="row">
-          <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
-            <div class="form-group">
-              <img src="{{user.profileImageURL}}" alt="{{user.displayName}}" class="img-thumbnail user-profile-picture">
-            </div>
+      <div class="row">
+        <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
+          <div class="form-group">
+            <img src="{{user.profileImageURL}}" alt="{{user.displayName}}" class="img-thumbnail user-profile-picture">
           </div>
-          <div class="col-xs-12 col-sm-8 col-md-9 col-lg-9">
-            <table class="table">
-              <tr>
-                <td>姓：</td>
-                <td>{{ user.firstName }}</td>
-              </tr>
-              <tr>
-                <td>名：</td>
-                <td>{{ user.lastName }}</td>
-              </tr>
-              <tr>
-                <td>メール：</td>
-                <td>{{ user.email }}</td>
-              </tr>
-              <tr>
-                <td>役割：</td>
-                <td><span ng-bind="user.roles"></span></td>
-              </tr>
-              <tr>
-                <td>作成日</td>
-                <td><span>{{user.created.format('LL')}}</span></td>
-              </tr>
-            </table>
-          </div>
-          <div class="clearfix"></div>
         </div>
+        <div class="col-xs-12 col-sm-8 col-md-9 col-lg-9">
+          <table class="table">
+            <tr>
+              <td>姓：</td>
+              <td>{{ user.firstName }}</td>
+            </tr>
+            <tr>
+              <td>名：</td>
+              <td>{{ user.lastName }}</td>
+            </tr>
+            <tr>
+              <td>メール：</td>
+              <td>{{ user.email }}</td>
+            </tr>
+            <tr>
+              <td>役割：</td>
+              <td><span ng-bind="user.role"></span></td>
+            </tr>
+            <tr>
+              <td>作成日</td>
+              <td><span>{{user.createdMM.format('LL')}}</span></td>
+            </tr>
+          </table>
+        </div>
+        <div class="clearfix"></div>
+      </div>
     </div>
   </div>
 </section>

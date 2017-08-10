@@ -7,7 +7,10 @@ UserController.$inject = ['$scope', '$state', 'Authentication', 'userResolve', '
 function UserController($scope, $state, Authentication, userResolve, dialog, toast) {
   $scope.owner = Authentication.user;
   $scope.user = userResolve;
-  $scope.user.created = moment($scope.user.created);
+  if ($scope.user._id) {
+    $scope.user.createdMM = moment($scope.user.created);
+    $scope.user.role = (_.contains($scope.user.roles, 'admin')) ? '管理者' : '一般ユーザー';
+  }
 
   $scope.remove = function () {
     if ($scope.owner._id === $scope.user._id) {
