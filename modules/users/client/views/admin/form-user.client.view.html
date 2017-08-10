@@ -40,9 +40,9 @@
           <div class="form-group col-md-6" show-errors>
             <label class="control-label" for="roles">役割</label>
             <select id="roles" name="roles" class="form-control" ng-model="user.roles" ng-list required>
-              <option value></option>
-              <option value="user,admin">管理者</option>
-              <option value="user">一般ユーザー</option>
+              <option value>指定しない</option>
+              <option value="user,admin" ng-selected="user.isAdmin">管理者</option>
+              <option value="user" ng-selected="user.isUser">一般ユーザー</option>
             </select>
             <div ng-messages="userForm.roles.$error" role="alert">
               <p class="help-block error-text" ng-message="required">1つ以上の役割が必要です。</p>
