@@ -10,7 +10,7 @@ function UserController($scope, $state, Authentication, userResolve, dialog, toa
 
   $scope.remove = function () {
     if ($scope.owner._id === $scope.user._id) {
-      toast.error("自分のアカウントを削除できません。", 'Error!');
+      toast.error("自分のアカウントを削除できません。", 'エラー！');
     }
     $scope.message_title = 'アカウント削除!';
     $scope.message_content = $scope.user.displayName + 'さんのアカウントを削除しますか？';
