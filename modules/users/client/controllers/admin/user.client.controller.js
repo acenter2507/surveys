@@ -5,10 +5,13 @@ angular.module('users.admin')
 UserController.$inject = ['$scope', '$state', 'Authentication', 'userResolve', 'ngDialog', 'toastr'];
 
 function UserController($scope, $state, Authentication, userResolve, dialog, toast) {
-  $scope.authentication = Authentication;
+  $scope.owner = Authentication.user;
   $scope.user = userResolve;
 
   $scope.remove = function () {
+    if ($scope.owner._id === $scope.user._id) {
+      toast.error("自分のアカウントを削除できません。", 'Error!');
+    }
     $scope.message_title = 'アカウント削除!';
     $scope.message_content = $scope.user.displayName + 'さんのアカウントを削除しますか？';
     $scope.dialog_type = 3;
