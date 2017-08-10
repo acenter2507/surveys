@@ -78,7 +78,7 @@ function users_filter($filter) {
 
 function roles_filter() {
   return function (roles) {
-    if (roles.indexOf('admin') < 0 && roles.length > 1) {
+    if (roles.indexOf('admin') < 0) {
       return '一般ユーザー';
     } else {
       return '管理者';
