@@ -2,9 +2,9 @@
 angular.module('users.admin')
   .controller('UserController', UserController);
 
-UserController.$inject = ['$scope', '$state', 'Authentication', 'userResolve', 'ngDialog', 'toastr', 'AdminUserApi'];
+UserController.$inject = ['$scope', '$state', '$stateParams', 'Authentication', 'userResolve', 'ngDialog', 'toastr', 'AdminUserApi'];
 
-function UserController($scope, $state, Authentication, userResolve, dialog, toast, AdminUserApi) {
+function UserController($scope, $state, $stateParams, Authentication, userResolve, dialog, toast, AdminUserApi) {
   $scope.owner = Authentication.user;
   $scope.user = userResolve;
   if ($scope.user._id) {
@@ -14,6 +14,9 @@ function UserController($scope, $state, Authentication, userResolve, dialog, toa
     $scope.user.isUser = !_.contains($scope.user.roles, 'admin');
   }
   $scope.newPassword = '';
+
+  $scope.backPage = $stateParams.page;
+  console.log($scope.backPage);
 
   $scope.remove = function () {
     if ($scope.owner._id === $scope.user._id) {
