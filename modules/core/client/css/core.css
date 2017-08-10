@@ -186,3 +186,10 @@ h6, .h6 {
     opacity: 1; } }
 .fadeIn {
   animation-name: fadeIn; }
+
+.progress-xs {
+  height: 4px !important; }
+.progress-sm {
+  height: 8px !important; }
+.progress-lg {
+  height: 24px !important; }
