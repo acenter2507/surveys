@@ -188,8 +188,10 @@ h6, .h6 {
   animation-name: fadeIn; }
 
 .progress-xs {
+  border-radius: 0 !important;
   height: 4px !important; }
 .progress-sm {
+  border-radius: 0 !important;
   height: 8px !important; }
 .progress-lg {
   height: 24px !important; }
