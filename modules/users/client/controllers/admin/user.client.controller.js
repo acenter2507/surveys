@@ -4,7 +4,7 @@ angular.module('users.admin')
 
 UserController.$inject = ['$scope', '$state', 'Authentication', 'userResolve', 'ngDialog', 'toastr'];
 
-function UserController($scope, $state, Authentication, userResolve, ngDialog, toastr) {
+function UserController($scope, $state, Authentication, userResolve, dialog, toast) {
   $scope.authentication = Authentication;
   $scope.user = userResolve;
 
