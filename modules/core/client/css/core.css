@@ -95,9 +95,7 @@ a:hover .header-profile-image {
     padding: 1.25rem; }
 
 .animated {
-  -webkit-animation-duration: 1s;
   animation-duration: 1s;
-  -webkit-animation-fill-mode: both;
   animation-fill-mode: both; }
 
 @-webkit-keyframes fadeIn {
@@ -112,5 +110,4 @@ a:hover .header-profile-image {
   to {
     opacity: 1; } }
 .fadeIn {
-  -webkit-animation-name: fadeIn;
   animation-name: fadeIn; }
