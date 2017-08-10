@@ -139,7 +139,8 @@ h6, .h6 {
   height: unset; }
 .card.card-expand.open .card-footer {
   height: unset; }
-
+  .card.card-expand .card-header i.r180 {
+    transform: rotate(180deg); }
 .animated {
   animation-duration: 1s;
   animation-fill-mode: both; }
