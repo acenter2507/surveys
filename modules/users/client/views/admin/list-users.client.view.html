@@ -64,7 +64,7 @@
             <td>
               <div class="form-group mgnb" role="group">
                 <a class="btn btn-xs btn-success" ui-sref="admin.user({ userId: user._id })">詳細</a>
-                <a class="btn btn-xs btn-info" ui-sref="admin.admin.user-edit({ userId: user._id })">編集</a>
+                <a class="btn btn-xs btn-info" ui-sref="admin.user-edit({ userId: user._id })">編集</a>
                 <a class="btn btn-xs btn-danger" ng-click="delete_user(user)">削除</a>
                 <a class="btn btn-xs btn-default" ui-sref="admin.users.resetpass({ userId: user._id })">パスワードリセット</a>
               </div>
@@ -79,17 +79,4 @@
       </div>
     </div>
   </div>
-
-  <!--<div class="page-header">
-    <div class="row">
-      <div class="col-md-4">
-        <h1>Users</h1>
-      </div>
-      <div class="col-md-4" style="margin-top: 2em">
-        <input class="form-control col-md-4" type="text" ng-model="search" placeholder="Search" ng-change="figureOutItemsToDisplay()"
-        />
-      </div>
-    </div>
-  </div>-->
-
 </section>
