@@ -13,6 +13,9 @@
         abstract: true,
         url: '/surveys',
         template: '<ui-view/>',
+        ncyBreadcrumb: {
+          label: 'アンケート管理'
+        },
         data: {
           roles: ['user', 'admin']
         }
@@ -22,6 +25,9 @@
         templateUrl: 'modules/surveys/client/views/list-surveys.client.view.html',
         controller: 'SurveysListController',
         controllerAs: 'vm',
+        ncyBreadcrumb: {
+          label: 'アンケート一覧'
+        },
         data: {
           pageTitle: 'Surveys List'
         }
@@ -34,6 +40,9 @@
         resolve: {
           surveyResolve: newSurvey
         },
+        ncyBreadcrumb: {
+          label: 'アンケート作成'
+        },
         data: {
           roles: ['user', 'admin'],
           pageTitle: 'Surveys Create'
@@ -44,6 +53,9 @@
         templateUrl: 'modules/surveys/client/views/form-survey.client.view.html',
         controller: 'SurveysController',
         controllerAs: 'vm',
+        ncyBreadcrumb: {
+          label: 'アンケート編集'
+        },
         resolve: {
           surveyResolve: getSurvey
         },
@@ -56,6 +68,9 @@
         templateUrl: 'modules/surveys/client/views/view-survey.client.view.html',
         controller: 'SurveysController',
         controllerAs: 'vm',
+        ncyBreadcrumb: {
+          label: 'アンケート詳細'
+        },
         resolve: {
           surveyResolve: getSurvey
         },

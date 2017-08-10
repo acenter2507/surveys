@@ -7,7 +7,10 @@ angular.module('users.admin.routes').config(['$stateProvider',
       .state('admin.users', {
         url: '/users',
         templateUrl: 'modules/users/client/views/admin/list-users.client.view.html',
-        controller: 'UserListController'
+        controller: 'UserListController',
+        ncyBreadcrumb: {
+          label: 'アカウント一覧'
+        }
       })
       .state('admin.user', {
         url: '/users/:userId',
@@ -19,6 +22,9 @@ angular.module('users.admin.routes').config(['$stateProvider',
               userId: $stateParams.userId
             });
           }]
+        },
+        ncyBreadcrumb: {
+          label: 'アカウント詳細'
         }
       })
       .state('admin.user-edit', {
@@ -31,6 +37,9 @@ angular.module('users.admin.routes').config(['$stateProvider',
               userId: $stateParams.userId
             });
           }]
+        },
+        ncyBreadcrumb: {
+          label: 'アカウント編集'
         }
       });
   }

@@ -8,6 +8,9 @@ angular.module('core.admin.routes').config(['$stateProvider',
         abstract: true,
         url: '/admin',
         template: '<ui-view/>',
+        ncyBreadcrumb: {
+          label: 'システム管理'
+        },
         data: {
           roles: ['admin']
         }
