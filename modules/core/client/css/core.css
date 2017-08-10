@@ -86,13 +86,16 @@ a:hover .header-profile-image {
   background-color: #fff;
   box-shadow: 0 1px 2px rgba(0,0,0,.1);
   transition: all 0.3s cubic-bezier(.25,.8,.25,1); }
-  .card-header,
-  .card-footer {
+  .card-header {
     padding: 0.75rem 1.25rem;
-    margin-bottom: 0; }
+    margin-bottom: 0; 
+    border-bottom: 1px solid #cfd8dc; }
   .card-body {
     flex: 1 1 auto;
     padding: 1.25rem; }
+  .card-footer {
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 0; }
 
 .animated {
   animation-duration: 1s;
