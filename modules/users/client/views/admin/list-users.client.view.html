@@ -49,7 +49,7 @@
             <td><span ng-bind="user.roles"></span></td>
             <td>{{ user.email }}</td>
             <td>
-              <div class="form-group" role="group">
+              <div class="form-group mgnb" role="group">
                 <a class="btn btn-xs btn-success" ui-sref="admin.user({ userId: user._id })">詳細</a>
                 <a class="btn btn-xs btn-info mg5l" ui-sref="admin.admin.user-edit({ userId: user._id })">編集</a>
                 <a class="btn btn-xs btn-danger mg5l" ng-click="delete_user(user)">削除</a>
