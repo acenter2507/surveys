@@ -32,6 +32,12 @@ body {
   margin-bottom: 1rem;
   padding: 10px 15px;
   border-radius: 0; }
+.navbar .navbar-brand {
+  background-image: url("../img/brand/logo.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 70px auto;
+}
 
 .undecorated-link:hover {
   text-decoration: none;
