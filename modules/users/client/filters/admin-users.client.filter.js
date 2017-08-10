@@ -2,6 +2,7 @@
 
 angular
   .module('users.admin')
+  .filter('roles_filter', roles_filter)
   .filter('users_filter', users_filter);
 
 users_filter.$inject = ['$filter'];
@@ -73,4 +74,14 @@ function users_filter($filter) {
     return out;
   };
 
+}
+
+function roles_filter() {
+  return function (roles) {
+    if (roles.indexOf('admin') < 0 || roles.length > 1) {
+      return '一般ユーザー';
+    } else {
+      return '管理者';
+    }
+  };
 }

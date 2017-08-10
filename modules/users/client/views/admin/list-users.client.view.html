@@ -88,7 +88,7 @@
             </td>
             <td>{{ user.firstName }}</td>
             <td>{{ user.lastName }}</td>
-            <td><span ng-bind="user.roles"></span></td>
+            <td><span ng-bind="user.roles | roles_filter"></span></td>
             <td>{{ user.email }}</td>
             <td>
               <div class="form-group mgnb" role="group">
