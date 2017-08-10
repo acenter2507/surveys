@@ -39,7 +39,7 @@ body {
   background-image: url("../img/brand/logo.png");
   background-repeat: no-repeat;
   background-position: center center;
-  background-size: 70px auto;
+  background-size: 100px auto;
 }
 
 .undecorated-link:hover {
