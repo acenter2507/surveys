@@ -29,6 +29,7 @@ module.exports = {
         'public/lib/angular-moment/angular-moment.js',
         'public/lib/angular-breadcrumb/dist/angular-breadcrumb.js',
         'public/lib/angular-loading-bar/build/loading-bar.js',
+        'public/lib/angular-webstorage/angular-webstorage.js',
         'public/lib/ng-dialog/js/ngDialog.min.js',
         'public/lib/angular-toastr/dist/angular-toastr.tpls.js'
       ],

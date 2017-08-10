@@ -16,7 +16,8 @@ var ApplicationConfiguration = (function () {
     'angular-loading-bar',
     'angularMoment',
     'ngDialog',
-    'toastr'
+    'toastr',
+    'webStorageModule'
   ];
 
   // Add a new vertical module

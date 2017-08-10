@@ -3,9 +3,19 @@
 angular.module('users.admin')
   .controller('UserListController', UserListController);
 
-UserListController.$inject = ['$scope', '$state', 'Authentication', '$filter', 'AdminUserService', 'ngDialog', 'toastr'];
+UserListController.$inject = [
+  '$scope',
+  '$state',
+  'Authentication',
+  '$filter',
+  'AdminUserService',
+  'ngDialog',
+  'toastr',
+  'Storages',
+  'Constants'
+];
 
-function UserListController($scope, $state, Authentication, $filter, AdminUserService, dialog, toast) {
+function UserListController($scope, $state, Authentication, $filter, AdminUserService, dialog, toast, Storages, Constants) {
   $scope.owner = Authentication.user;
   $scope.busy = true;
   $scope.filter = {};
@@ -18,8 +28,8 @@ function UserListController($scope, $state, Authentication, $filter, AdminUserSe
 
   $scope.buildPager = function () {
     $scope.pagedItems = [];
-    $scope.itemsPerPage = 15;
-    $scope.currentPage = 1;
+    $scope.itemsPerPage = 2;
+    $scope.currentPage = Storages.get_session(Constants.storages.users_page, 1);
     $scope.filter = {};
     $scope.figureOutItemsToDisplay();
   };
@@ -36,6 +46,7 @@ function UserListController($scope, $state, Authentication, $filter, AdminUserSe
   };
 
   $scope.pageChanged = function () {
+    Storages.set_session(Constants.storages.users_page, $scope.currentPage);
     $scope.figureOutItemsToDisplay();
   };
 
