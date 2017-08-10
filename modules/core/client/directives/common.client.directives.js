@@ -32,11 +32,11 @@ function cardExpandDirective() {
   function link(scope, element, attrs) {
     element.on('click', function () {
       if (element.hasClass('card-expand-toggle')) {
-        console.log($(element));
+        element.find('i').toggleClass('r180');
         // angular.element('body').toggleClass('sidebar-mobile-show');
         element.parent().parent().find('.card-expand').toggleClass('open');
       }
-      // element.find('i').toggleClass('r180');
+      // 
     });
   }
 }
