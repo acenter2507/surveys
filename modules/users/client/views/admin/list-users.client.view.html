@@ -60,8 +60,19 @@
         </tbody>
       </table>
       <div class="row text-center">
-        <pagination boundary-links="true" max-size="8" items-per-page="itemsPerPage" total-items="filterLength" ng-model="currentPage"
-          ng-change="pageChanged()"></pagination>
+        <pagination
+          boundary-links="true"
+          max-size="8"
+          items-per-page="itemsPerPage"
+          total-items="filterLength"
+          ng-model="currentPage"
+          ng-change="pageChanged()"
+          first-text="最初"
+          last-text="最後"
+          next-text="前"
+          previous-text="次"
+          >
+        </pagination>
       </div>
     </div>
   </div>
