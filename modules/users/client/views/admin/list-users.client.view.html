@@ -49,11 +49,11 @@
             <td><span ng-bind="user.roles"></span></td>
             <td>{{ user.email }}</td>
             <td>
-              <div class="btn-group" role="group">
-                <a class="btn btn-sm btn-success" ui-sref="admin.user({ userId: user._id })">詳細</a>
-                <a class="btn btn-sm btn-info mg5l" ui-sref="admin.admin.user-edit({ userId: user._id })">編集</a>
-                <a class="btn btn-sm btn-danger mg5l" ng-click="delete_user(user)">削除</a>
-                <a class="btn btn-sm btn-default mg5l" ui-sref="admin.users.resetpass({ userId: user._id })">パスワードリセット</a>
+              <div class="form-group" role="group">
+                <a class="btn btn-xs btn-success" ui-sref="admin.user({ userId: user._id })">詳細</a>
+                <a class="btn btn-xs btn-info mg5l" ui-sref="admin.admin.user-edit({ userId: user._id })">編集</a>
+                <a class="btn btn-xs btn-danger mg5l" ng-click="delete_user(user)">削除</a>
+                <a class="btn btn-xs btn-default mg5l" ui-sref="admin.users.resetpass({ userId: user._id })">パスワードリセット</a>
               </div>
             </td>
           </tr>
