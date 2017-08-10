@@ -1,0 +1,43 @@
+<section class="animated fadeIn">
+  <div class="card">
+    <div class="card-header">
+      <span class="h3"><i class="fa fa-lock"></i> パスワードリセット</span>
+      <button class="btn btn-sm btn-primary pull-right" ng-click="update_pass(userForm.$valid)">保存</button>
+    </div>
+    <div class="card-body">
+      <form name="userForm" ng-submit="update_pass(userForm.$valid)" novalidate>
+        <fieldset>
+            <div class="row">
+              <!-- Password-->
+              <div class="form-group col-sm-6 col-sm-offset-3" show-errors>
+                <label class="control-label" for="password">新しいパスワード</label>
+                <input type="password" id="password" name="password" class="form-control" ng-model="newPassword" placeholder="新しいパスワード入力"
+                  popover="{{popoverMsg}}" popover-trigger="focus" password-validator required>
+                <div ng-messages="userForm.password.$error" role="alert">
+                  <p class="help-block error-text" ng-message="required">パスワードは必須項目です。</p>
+                  <div ng-repeat="passwordError in passwordErrors">
+                    <p class="help-block error-text" ng-show="userForm.password.$error.requirements">{{passwordError}}</p>
+                  </div>
+                </div>
+                <div class="form-group" ng-show="!userForm.password.$error.required">
+                  <progressbar class="progress-xs" value="requirementsProgress" type="{{requirementsColor}}"><span style="color:white; white-space:nowrap;">{{requirementsProgress}}%</span></progressbar>
+                </div>
+              </div>
+            </div>
+        </fieldset>
+      </form>
+      <div class="well" ng-if="!user._id">
+        <p>
+          セキュリティのためパスワードはいくつのルールを守って頂きます。
+          <br>１．最短１０文字と最大１２８文字。
+          <br>２．３つ以上の繰り返し文字が含まない。
+          <br>３．最低１つの小文字
+          <br>４．最低１つの大文字
+          <br>５．最低１つの番号
+          <br>６．最低１つの特徴文字
+          <br>例：Abc123456@
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

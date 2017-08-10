@@ -3,14 +3,14 @@
 angular.module('users.admin')
   .controller('UserListController', UserListController);
 
-UserListController.$inject = ['$scope', '$state', 'Authentication', '$filter', 'Admin', 'ngDialog', 'toastr'];
+UserListController.$inject = ['$scope', '$state', 'Authentication', '$filter', 'AdminUserService', 'ngDialog', 'toastr'];
 
-function UserListController($scope, $state, Authentication, $filter, Admin, dialog, toast) {
+function UserListController($scope, $state, Authentication, $filter, AdminUserService, dialog, toast) {
   $scope.owner = Authentication.user;
   $scope.busy = true;
   $scope.filter = {};
 
-  Admin.query(function (data) {
+  AdminUserService.query(function (data) {
     $scope.users = data;
     $scope.buildPager();
   });

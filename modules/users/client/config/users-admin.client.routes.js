@@ -28,11 +28,7 @@ angular.module('users.admin.routes').config(['$stateProvider',
         templateUrl: 'modules/users/client/views/admin/view-user.client.view.html',
         controller: 'UserController',
         resolve: {
-          userResolve: ['$stateParams', 'Admin', function ($stateParams, Admin) {
-            return Admin.get({
-              userId: $stateParams.userId
-            });
-          }]
+          userResolve: getUser
         },
         ncyBreadcrumb: {
           label: 'アカウント詳細'
@@ -43,20 +39,34 @@ angular.module('users.admin.routes').config(['$stateProvider',
         templateUrl: 'modules/users/client/views/admin/form-user.client.view.html',
         controller: 'UserController',
         resolve: {
-          userResolve: ['$stateParams', 'Admin', function ($stateParams, Admin) {
-            return Admin.get({
-              userId: $stateParams.userId
-            });
-          }]
+          userResolve: getUser
         },
         ncyBreadcrumb: {
           label: 'アカウント編集'
         }
+      })
+      .state('admin.user-resetpass', {
+        url: '/users/:userId/resetpass',
+        templateUrl: 'modules/users/client/views/admin/resetpass.client.view.html',
+        controller: 'UserController',
+        resolve: {
+          userResolve: getUser
+        },
+        ncyBreadcrumb: {
+          label: 'パスワードリセット'
+        }
       });
   }
 ]);
-newUser.$inject = ['Admin'];
+getUser.$inject = ['$stateParams', 'AdminUserService'];
 
-function newUser(Admin) {
-  return new Admin();
+function getUser($stateParams, AdminUserService) {
+  return AdminUserService.get({
+    userId: $stateParams.userId
+  }).$promise;
+}
+newUser.$inject = ['AdminUserService'];
+
+function newUser(AdminUserService) {
+  return new AdminUserService();
 }

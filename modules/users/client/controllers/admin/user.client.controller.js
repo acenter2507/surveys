@@ -2,15 +2,16 @@
 angular.module('users.admin')
   .controller('UserController', UserController);
 
-UserController.$inject = ['$scope', '$state', 'Authentication', 'userResolve', 'ngDialog', 'toastr'];
+UserController.$inject = ['$scope', '$state', 'Authentication', 'userResolve', 'ngDialog', 'toastr', 'AdminUserApi'];
 
-function UserController($scope, $state, Authentication, userResolve, dialog, toast) {
+function UserController($scope, $state, Authentication, userResolve, dialog, toast, AdminUserApi) {
   $scope.owner = Authentication.user;
   $scope.user = userResolve;
   if ($scope.user._id) {
     $scope.user.createdMM = moment($scope.user.created);
     $scope.user.role = (_.contains($scope.user.roles, 'admin')) ? '管理者' : '一般ユーザー';
   }
+  $scope.newPassword = '';
 
   $scope.remove = function () {
     if ($scope.owner._id === $scope.user._id) {
@@ -58,5 +59,19 @@ function UserController($scope, $state, Authentication, userResolve, dialog, toa
         $scope.error = err.data.message;
       });
     }
+  };
+  // Reset password
+  $scope.update_pass = isValid => {
+    if (!isValid) {
+      $scope.$broadcast('show-errors-check-validity', 'userForm');
+      return false;
+    }
+    AdminUserApi.reset_pass($scope.user._id, $scope.newPassword)
+      .then(() => {
+        toast.success('パスワードを変換できました', '成功！');
+      })
+      .catch(err => {
+        toast.error(err.message, 'エラー！');
+      });
   };
 }

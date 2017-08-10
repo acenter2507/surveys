@@ -92,6 +92,30 @@ exports.list = function (req, res) {
     res.json(users);
   });
 };
+/**
+ * Update a User
+ */
+exports.resetpass = function (req, res) {
+  var user = req.model;
+  var password = req.body.password;
+
+  if (user && password) {
+    user.password = password;
+    user.save(function (err) {
+      if (err) {
+        return res.status(400).send({
+          message: errorHandler.getErrorMessage(err)
+        });
+      } else {
+        res.end();
+      }
+    });
+  } else {
+    res.status(400).send({
+      message: 'パスワードを保存できません'
+    });
+  }
+};
 
 /**
  * User middleware
