@@ -140,7 +140,15 @@ h6, .h6 {
 .card.card-expand.open .card-footer {
   height: unset; }
   .card.card-expand .card-header i.r180 {
-    transform: rotate(180deg); }
+    animation:r180 4s; }
+@-webkit-keyframes r180 {
+  100% {
+    transform: rotate(180deg); } }
+
+@keyframes r180 {
+  100% {
+    transform: rotate(180deg); } }
+
 .animated {
   animation-duration: 1s;
   animation-fill-mode: both; }
