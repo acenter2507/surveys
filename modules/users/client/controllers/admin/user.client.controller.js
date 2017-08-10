@@ -24,25 +24,25 @@ angular.module('users.admin').controller('UserController', ['$scope', '$state', 
         $scope.$broadcast('show-errors-check-validity', 'userForm');
         return false;
       }
-
-      var user = $scope.user;
-      if (user._id) {
-        user.$update(res => {
-          $state.go('admin.user', {
-            userId: res._id
-          });
-        }, err => {
-          $scope.error = err.data.message;
-        });
-      } else {
-        user.$save(res => {
-          $state.go('admin.user', {
-            userId: res._id
-          });
-        }, err => {
-          $scope.error = err.data.message;
-        });
-      }
+      console.log("DKM");
+      // var user = $scope.user;
+      // if (user._id) {
+      //   user.$update(res => {
+      //     $state.go('admin.user', {
+      //       userId: res._id
+      //     });
+      //   }, err => {
+      //     $scope.error = err.data.message;
+      //   });
+      // } else {
+      //   user.$save(res => {
+      //     $state.go('admin.user', {
+      //       userId: res._id
+      //     });
+      //   }, err => {
+      //     $scope.error = err.data.message;
+      //   });
+      // }
     };
   }
 ]);
