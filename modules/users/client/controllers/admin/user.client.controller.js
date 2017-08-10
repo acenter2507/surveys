@@ -15,9 +15,6 @@ function UserController($scope, $state, $stateParams, Authentication, userResolv
   }
   $scope.newPassword = '';
 
-  $scope.backPage = $stateParams.page;
-  console.log($scope.backPage);
-
   $scope.remove = function () {
     if ($scope.owner._id === $scope.user._id) {
       toast.error('自分のアカウントを削除できません。', 'エラー！');
