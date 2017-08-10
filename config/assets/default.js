@@ -19,6 +19,8 @@ module.exports = {
         'public/lib/angular-ui-utils/ui-utils.js',
         'public/lib/angular-bootstrap/ui-bootstrap-tpls.js',
         'public/lib/angular-file-upload/angular-file-upload.js',
+        'public/lib/angular-aria/angular-aria.js',
+        'public/lib/angular-material/angular-material.js',
         'public/lib/owasp-password-strength-test/owasp-password-strength-test.js',
         'public/lib/underscore/underscore.js',
         'public/lib/moment/moment.js',
@@ -26,8 +28,7 @@ module.exports = {
         'public/lib/moment/locale/ja.js',
         'public/lib/angular-moment/angular-moment.js',
         'public/lib/angular-breadcrumb/dist/angular-breadcrumb.js',
-        'public/lib/angular-loading-bar/build/loading-bar.js',
-        'public/lib/angular-material/angular-material.js'
+        'public/lib/angular-loading-bar/build/loading-bar.js'
       ],
       tests: ['public/lib/angular-mocks/angular-mocks.js']
     },
