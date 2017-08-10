@@ -39,7 +39,8 @@ function UserListController($scope, $state, Authentication, $filter, Admin, dial
 
   $scope.remove = function (user) {
     if ($scope.owner._id === user._id) {
-      toast.error("自分のアカウントを削除できません。", 'エラー！');
+      toast.error('自分のアカウントを削除できません。', 'エラー！');
+      return false;
     }
     $scope.message_title = 'アカウント削除!';
     $scope.message_content = user.displayName + 'さんのアカウントを削除しますか？';
