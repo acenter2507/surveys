@@ -139,6 +139,9 @@ h6, .h6 {
   height: unset; }
 .card.card-expand.open .card-footer {
   height: unset; }
+  .card.card-expand .card-header i {
+    transition-duration: 1s;
+  }
   .card.card-expand .card-header i.r180 {
     transition-duration: 1s;
     transform: rotate(180deg); }
