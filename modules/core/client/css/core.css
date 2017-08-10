@@ -140,9 +140,11 @@ h6, .h6 {
   height: 0;
   padding: 0; }
 .card.card-expand.open .card-body {
-  height: unset; }
+  height: unset;
+  padding: 1.25rem; }
 .card.card-expand.open .card-footer {
-  height: unset; }
+  height: unset;
+  padding: 0.75rem 1.25rem;  }
   .card.card-expand .card-header i {
     transition-duration: 0.5s;
   }
