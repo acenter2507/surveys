@@ -140,10 +140,10 @@ h6, .h6 {
 .card.card-expand.open .card-footer {
   height: unset; }
   .card.card-expand .card-header i {
-    transition-duration: 1s;
+    transition-duration: 0.5s;
   }
   .card.card-expand .card-header i.r180 {
-    transition-duration: 1s;
+    transition-duration: 0.5s;
     transform: rotate(180deg); }
 
 @-webkit-keyframes r180 {
