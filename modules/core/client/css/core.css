@@ -9,10 +9,9 @@ body {
   color: #555; }
 .wraper {
   min-height: 100%;
-  position:relative; 
-  margin-bottom: 50px; }
+  position:relative; }
 .content {
-  margin-top: 50px;
+  padding-top: 50px;
   padding-bottom: 50px; }
 
 .footer {
