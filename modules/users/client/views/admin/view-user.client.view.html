@@ -1,3 +1,50 @@
+<section class="animated fadeIn">
+  <div class="card">
+    <div class="card-header">
+      <span class="h3"><i class="fa fa-user"></i> {{user.displayName + 'の情報'}}</span>
+      <button class="btn btn-sm btn-info pull-right" ui-sref="admin.user-edit({ userId: user._id })">編集</button>
+      <button ng-if="user._id && owner._id !== user._id" class="btn btn-sm btn-danger pull-right mg5r" ng-click="remove()">削除</button>
+    </div>
+    <div class="card-body">
+        <div class="row">
+          <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
+            <div class="form-group">
+              <img src="{{user.profileImageURL}}" alt="{{user.displayName}}" class="img-thumbnail user-profile-picture">
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-8 col-md-9 col-lg-9">
+            <table class="table">
+              <tr>
+                <td>First name:</td>
+                <td>{{ user.firstName }}</td>
+              </tr>
+              <tr>
+                <td>Last name:</td>
+                <td>{{ user.lastName }}</td>
+              </tr>
+              <tr>
+                <td>Email:</td>
+                <td>{{ user.email }}</td>
+              </tr>
+              <tr>
+                <td>Provider:</td>
+                <td>{{ user.provider }}</td>
+              </tr>
+              <tr>
+                <td>Roles:</td>
+                <td><span ng-bind="user.roles"></span></td>
+              </tr>
+              <tr>
+                <td>Created:</td>
+                <td><span ng-bind="user.created"></span></td>
+              </tr>
+            </table>
+          </div>
+          <div class="clearfix"></div>
+        </div>
+    </div>
+  </div>
+</section>
 <section>
   <div class="page-header">
     <div class="row">
