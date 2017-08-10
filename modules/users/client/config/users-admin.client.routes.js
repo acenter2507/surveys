@@ -29,7 +29,7 @@ angular.module('users.admin.routes').config(['$stateProvider',
       })
       .state('admin.user-edit', {
         url: '/users/:userId/edit',
-        templateUrl: 'modules/users/client/views/admin/edit-user.client.view.html',
+        templateUrl: 'modules/users/client/views/admin/form-user.client.view.html',
         controller: 'UserController',
         resolve: {
           userResolve: ['$stateParams', 'Admin', function ($stateParams, Admin) {
@@ -40,6 +40,19 @@ angular.module('users.admin.routes').config(['$stateProvider',
         },
         ncyBreadcrumb: {
           label: 'アカウント編集'
+        }
+      })
+      .state('admin.user-create', {
+        url: '/users/create',
+        templateUrl: 'modules/users/client/views/admin/form-user.client.view.html',
+        controller: 'UserController',
+        resolve: {
+          userResolve: ['Admin', function (Admin) {
+            return new Admin();
+          }]
+        },
+        ncyBreadcrumb: {
+          label: 'アカウント作成'
         }
       });
   }

@@ -16,6 +16,7 @@ angular.module('users.admin').controller('UserListController', ['$scope', '$filt
       $scope.itemsPerPage = 15;
       $scope.currentPage = 1;
       $scope.figureOutItemsToDisplay();
+      $scope.busy = false;
     };
 
     $scope.figureOutItemsToDisplay = function () {

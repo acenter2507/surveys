@@ -3,6 +3,7 @@
     <div class="card-header">
       <span class="h3"><i class="fa fa-user"></i> {{(user._id) ? 'アカウント編集' : 'アカウント追加'}}</span>
       <button class="btn btn-sm btn-primary pull-right" ng-class="save(userForm.$valid)">保存</button>
+      <button class="btn btn-sm btn-danger pull-right mg5l" ng-class="vm.remove()">削除</button>
     </div>
     <div class="card-body">
       <form name="userForm" ng-submit="update(userForm.$valid)" novalidate>

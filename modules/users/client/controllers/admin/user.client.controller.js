@@ -19,22 +19,30 @@ angular.module('users.admin').controller('UserController', ['$scope', '$state', 
       }
     };
 
-    $scope.update = function (isValid) {
+    $scope.save = function (isValid) {
       if (!isValid) {
         $scope.$broadcast('show-errors-check-validity', 'userForm');
-
         return false;
       }
 
       var user = $scope.user;
-
-      user.$update(function () {
-        $state.go('admin.user', {
-          userId: user._id
+      if (user._id) {
+        user.$update(res => {
+          $state.go('admin.user', {
+            userId: res._id
+          });
+        }, err => {
+          $scope.error = err.data.message;
         });
-      }, function (errorResponse) {
-        $scope.error = errorResponse.data.message;
-      });
+      } else {
+        user.$save(res => {
+          $state.go('admin.user', {
+            userId: res._id
+          });
+        }, err => {
+          $scope.error = err.data.message;
+        });
+      }
     };
   }
 ]);
