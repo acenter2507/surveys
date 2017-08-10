@@ -12,6 +12,17 @@ angular.module('users.admin.routes').config(['$stateProvider',
           label: 'アカウント一覧'
         }
       })
+      .state('admin.user-create', {
+        url: '/users/create',
+        templateUrl: 'modules/users/client/views/admin/form-user.client.view.html',
+        controller: 'UserController',
+        resolve: {
+          userResolve: newUser
+        },
+        ncyBreadcrumb: {
+          label: 'アカウント作成'
+        }
+      })
       .state('admin.user', {
         url: '/users/:userId',
         templateUrl: 'modules/users/client/views/admin/view-user.client.view.html',
@@ -40,17 +51,6 @@ angular.module('users.admin.routes').config(['$stateProvider',
         },
         ncyBreadcrumb: {
           label: 'アカウント編集'
-        }
-      })
-      .state('admin.user-create', {
-        url: '/users/create',
-        templateUrl: 'modules/users/client/views/admin/form-user.client.view.html',
-        controller: 'UserController',
-        resolve: {
-          userResolve: newUser
-        },
-        ncyBreadcrumb: {
-          label: 'アカウント作成'
         }
       });
   }
