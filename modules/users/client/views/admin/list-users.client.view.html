@@ -1,8 +1,9 @@
 <section class="animated fadeIn">
   <div class="card">
     <div class="card-header">
-      <h3><i class="fa fa-users"></i> アカウント一覧</h3>
-
+      <span class="h3"><i class="fa fa-users"></i> アカウント一覧</span>
+      <a class="btn btn-sm btn-primary pull-left" ui-sref="admin.user-new">追加</a>
+      <div class="clearfix"></div>
     </div>
     <div class="card-body">
       <table class="table table-hover table-bordered">
@@ -29,14 +30,13 @@
             <td class="text-center">
               <img src="{{ user.profileImageURL }}" alt="{{ user.displayName }}" class="header-profile-image">
             </td>
-
             <td>{{ user.firstName }}</td>
             <td>{{ user.lastName }}</td>
             <td><span ng-bind="user.roles"></span></td>
             <td>{{ user.email }}</td>
             <td>
               <div class="btn-group" role="group">
-                <a class="btn btn-sm btn-primary" ui-sref="admin.user({ userId: user._id })">詳細</a>
+                <a class="btn btn-sm btn-success" ui-sref="admin.user({ userId: user._id })">詳細</a>
                 <a class="btn btn-sm btn-info" ui-sref="admin.admin.user-edit({ userId: user._id })">編集</a>
                 <a class="btn btn-sm btn-danger" ng-click="delete_user(user)">削除</a>
                 <a class="btn btn-sm btn-default" ui-sref="admin.users.resetpass({ userId: user._id })">パスワードリセット</a>
