@@ -39,7 +39,7 @@ body {
   padding: 0.5rem 1rem;
   background-image: url("../img/brand/logo.png");
   background-repeat: no-repeat;
-  background-position: left center;
+  background-position: 15px center;
   background-size: 100px auto;
 }
 
