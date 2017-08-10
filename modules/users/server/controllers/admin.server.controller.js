@@ -9,6 +9,26 @@ var path = require('path'),
   errorHandler = require(path.resolve('./modules/core/server/controllers/errors.server.controller'));
 
 /**
+ * Update a User
+ */
+exports.create = function (req, res) {
+  var user = new User(req.body);
+  user.displayName = user.firstName + ' ' + user.lastName;
+
+  user.save(function (err) {
+    if (err) {
+      return res.status(400).send({
+        message: errorHandler.getErrorMessage(err)
+      });
+    }
+    // Remove sensitive data before login
+    user.password = undefined;
+    user.salt = undefined;
+    res.json(user);
+  });
+};
+
+/**
  * Show the current user
  */
 exports.read = function (req, res) {
