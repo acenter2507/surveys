@@ -96,6 +96,9 @@ a:hover .header-profile-image {
   .card-footer {
     padding: 0.75rem 1.25rem;
     margin-bottom: 0; }
+    .card-header h3, .card-header .h3 {
+      margin-top: 0;
+    }
 
 .animated {
   animation-duration: 1s;
