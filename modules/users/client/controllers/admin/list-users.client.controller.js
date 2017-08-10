@@ -2,6 +2,9 @@
 
 angular.module('users.admin').controller('UserListController', ['$scope', '$filter', 'Admin',
   function ($scope, $filter, Admin) {
+
+    $scope.busy = true;
+
     Admin.query(function (data) {
       $scope.users = data;
       $scope.buildPager();
