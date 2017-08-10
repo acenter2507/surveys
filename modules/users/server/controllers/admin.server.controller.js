@@ -14,6 +14,7 @@ var path = require('path'),
 exports.create = function (req, res) {
   var user = new User(req.body);
   user.displayName = user.firstName + ' ' + user.lastName;
+  user.provider = 'local';
 
   user.save(function (err) {
     if (err) {
