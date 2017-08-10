@@ -33,6 +33,7 @@ function cardExpandDirective() {
     element.on('click', function () {
       if (element.hasClass('card-expand-toggle')) {
         element.find('i').toggleClass('r180');
+        console.log(element.parent());
         // angular.element('body').toggleClass('sidebar-mobile-show');
         element.parent().find('.card-expand').toggleClass('open');
       }
