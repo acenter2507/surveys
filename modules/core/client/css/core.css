@@ -118,15 +118,27 @@ h6, .h6 {
     margin-bottom: 0; 
     border-bottom: 1px solid #eee; }
   .card-body {
+    animation-duration: 1s;
+    transition: height .5s;
     flex: 1 1 auto;
     padding: 1.25rem; }
   .card-footer {
+    animation-duration: 1s;
+    transition: height .5s;
     padding: 0.75rem 1.25rem;
     margin-bottom: 0; }
     .card-header h3, .card-header .h3 {
       margin-top: 1rem;
       margin-bottom: 0.5rem;
     }
+.card.card-expand .card-body {
+  height: 0; }
+.card.card-expand .card-footer {
+  height: 0; }
+.card.card-expand.open .card-body {
+  height: unset; }
+.card.card-expand.open .card-footer {
+  height: unset; }
 
 .animated {
   animation-duration: 1s;
