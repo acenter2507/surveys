@@ -47,9 +47,7 @@ angular.module('users.admin.routes').config(['$stateProvider',
         templateUrl: 'modules/users/client/views/admin/form-user.client.view.html',
         controller: 'UserController',
         resolve: {
-          userResolve: ['Admin', function (Admin) {
-            return new Admin();
-          }]
+          userResolve: newUser
         },
         ncyBreadcrumb: {
           label: 'アカウント作成'
@@ -60,5 +58,5 @@ angular.module('users.admin.routes').config(['$stateProvider',
 newUser.$inject = ['Admin'];
 
 function newUser(Admin) {
-  return new newUser();
+  return new Admin();
 }
