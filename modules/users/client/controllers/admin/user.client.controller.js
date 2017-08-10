@@ -7,6 +7,7 @@ UserController.$inject = ['$scope', '$state', 'Authentication', 'userResolve', '
 function UserController($scope, $state, Authentication, userResolve, dialog, toast) {
   $scope.owner = Authentication.user;
   $scope.user = userResolve;
+  $scope.user.created = moment($scope.user.created);
 
   $scope.remove = function () {
     if ($scope.owner._id === $scope.user._id) {
