@@ -9,20 +9,48 @@
       <div class="row">
         <div class="form-group col-sm-6">
           <label for="search">検索</label>
-          <input name="search" id="search" class="form-control" type="text" ng-model="filter.search" placeholder="検索キー" ng-change="figureOutItemsToDisplay()"
+          <input name="search" id="search" class="form-control input-sm" type="text" ng-model="filter.search" placeholder="検索キー" ng-change="figureOutItemsToDisplay()"
           />
         </div>
         <div class="form-group col-sm-6">
           <label for="sort">ソート</label>
-          <select id="sort" name="sort" class="form-control" ng-model="filter.sort" ng-change="figureOutItemsToDisplay()">
-              <option value>デフォルト</option>
-              <option value="-created">Newest to oldest</option>
-              <option value="created">Oldest to newest</option>
-              <option value="-surveyCnt">アンケート数の多い順番</option>
-              <option value="surveyCnt">アンケート数の少ない順番</option>
-            </select>
+          <select id="sort" name="sort" class="form-control input-sm" ng-model="filter.sort" ng-change="figureOutItemsToDisplay()">
+            <option value>デフォルト</option>
+            <option value="-created">Newest to oldest</option>
+            <option value="created">Oldest to newest</option>
+            <option value="-surveyCnt">アンケート数の多い順番</option>
+            <option value="surveyCnt">アンケート数の少ない順番</option>
+          </select>
         </div>
       </div>
+      <div class="row">
+        <div class="form-group col-sm-6">
+          <label for="search">役割</label>
+          <select id="roles" name="roles" class="form-control input-sm" ng-model="filter.roles" ng-change="figureOutItemsToDisplay()">
+            <option value>全て</option>
+            <option value="admin">管理者</option>
+            <option value="user">一般ユーザー</option>
+          </select>
+        </div>
+        <div class="form-group col-sm-6">
+          <div class="col-sm-12 pdn"><label>アンケート数</label></div>
+          <div class="col-sm-6 pdn">
+            <input name="surveys" id="surveys" type="text" class="form-control input-sm" placeholder="アンケート数を入力" ng-model="filter.surveys"
+              ng-change="figureOutItemsToDisplay()">
+          </div>
+          <div class="col-sm-6 pdn">
+            <select class="form-control input-sm" ng-model="filter.surveys_pref" ng-change="figureOutItemsToDisplay()">
+              <option value>指定しない</option>
+              <option value="least">より少ない</option>
+              <option value="most">より多い</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+    <div class="card-footer">
+      <button class="btn btn-sm btn-warning" ng-click="clear_filter()">クリア</button>
     </div>
   </div>
   <!-- User list -->

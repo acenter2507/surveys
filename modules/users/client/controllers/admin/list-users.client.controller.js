@@ -12,6 +12,7 @@ function UserListController($scope, $state, Authentication, $filter, AdminUserSe
 
   AdminUserService.query(function (data) {
     $scope.users = data;
+    $scope.busy = false;
     $scope.buildPager();
   });
 
@@ -19,21 +20,27 @@ function UserListController($scope, $state, Authentication, $filter, AdminUserSe
     $scope.pagedItems = [];
     $scope.itemsPerPage = 15;
     $scope.currentPage = 1;
+    $scope.filter = {};
     $scope.figureOutItemsToDisplay();
-    $scope.busy = false;
   };
 
   $scope.figureOutItemsToDisplay = function () {
-    $scope.filteredItems = $filter('filter')($scope.users, {
-      $: $scope.filter.search
-    });
+    if ($scope.busy) return;
+    $scope.busy = true;
+    $scope.filteredItems = $filter('users_filter')($scope.users, $scope.filter);
     $scope.filterLength = $scope.filteredItems.length;
     var begin = (($scope.currentPage - 1) * $scope.itemsPerPage);
     var end = begin + $scope.itemsPerPage;
     $scope.pagedItems = $scope.filteredItems.slice(begin, end);
+    $scope.busy = false;
   };
 
   $scope.pageChanged = function () {
+    $scope.figureOutItemsToDisplay();
+  };
+
+  $scope.clear_filter = function () {
+    $scope.filter = {};
     $scope.figureOutItemsToDisplay();
   };
 
